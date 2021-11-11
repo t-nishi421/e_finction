@@ -13,7 +13,7 @@ def least_squares(X, y):
     return J
 
 def normal_equation(X, y):
-    """ # 正規方程式法
+    """ # 正規方程式
     目的関数J(θ)を最小にするθを出力
 
     Args:
