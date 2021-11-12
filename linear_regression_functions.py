@@ -1,19 +1,8 @@
+# 線形回帰で用いる関数
 import numpy as np
 
-def least_squares(X, y):
-    """ 最小二乗法（未完成）
-    Returns:
-        [type]: [description]
-    """
-    m = X.size
-    theta = np.ones(X.size)
-    h = X@theta
-
-    J = 1/(2*m)*((h - y)**2).sum()
-    return J
-
 def add_ones_to_firstcolum(X):
-    """ # 各ベクトルの1列目に「1」を追加する
+    """ # 行列の1列目に「1」を追加する
 
     Args:
         X (numpy.ndarray): 行列X
@@ -32,13 +21,23 @@ def normal_equation(X, y):
 
     Args:
         - X (numpy.ndarray): 計画行列 size:m(n+1)
-        - y (numpy.ndarray): 実数値列ベクトル size:m
+        - y (numpy.ndarray): 実測値列ベクトル size:m
 
     Returns:
         - numpy.ndarray: 目的関数J(θ)を最小にするθ
     """
     return np.linalg.pinv(X.T@X)@X.T@y
 
-X = np.array([[1,2],[1,4]])
-y = np.array([[1],[4]])
-normal_equation(X, y)
+def computeCost(h, y):
+    """ # 目的関数Jの計算を行う
+    J = 1/2m Σ,m,i=1,(h(x(i)) - y(i))**2
+
+    Args:
+        h (numpy.ndarray): 仮説ベクトル
+        y (numpy.ndarray): 実数値ベクトル
+
+    Returns:
+        numpy.float64: J
+    """
+    m = y.size
+    return 1/(2*m) * np.sum((h - y)**2)
