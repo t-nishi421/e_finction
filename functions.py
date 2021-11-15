@@ -42,3 +42,22 @@ def normal_equation(X, y):
 X = np.array([[1,2],[1,4]])
 y = np.array([[1],[4]])
 normal_equation(X, y)
+
+def the_steepest_descent(X, y, alpha=0.01, epochs=10000):
+    m = X.size
+    cost = []
+
+    # 更新パラメータ
+    a = 0
+    b = 0
+
+    for _ in range(epochs):
+        h = a*X + b
+        cost.append(1 / (2*m) * np.sum((h - y)**2))
+
+        a = a - alpha/m * np.sum((h - y)*X)
+        b = b - alpha/m * np.sum(h - y)
+
+    print(f'a:{a}')
+    print(f'b:{b}')
+    return a, b

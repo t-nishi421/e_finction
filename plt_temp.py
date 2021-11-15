@@ -1,3 +1,4 @@
+import numpy as np
 import matplotlib as plt
 
 def plotData(X, y):
@@ -20,3 +21,29 @@ def plotData(X, y):
     plt.scatter(X, y, c='b') #散布図
     plt.draw() #グラフを表示
 
+def out_minmax_plot(x):
+    if np.amin(x) < 0:
+        x_min = np.amin(x) * 1.1
+    else:
+        x_min = np.amin(x) * 0.5
+    if np.amax(x) < 0:
+        x_max = np.amax(x) * 0.5
+    else:
+        x_max = np.amax(x) * 1.1
+    return x_min, x_max
+
+def tow_axes_plot_temp(x, y, title=None, xlabel=None, ylabel=None):
+
+    x_min, x_max = out_minmax_plot(x)
+    y_min, y_max = out_minmax_plot(y)
+
+    plt.xlim([x_min, x_max])
+    plt.ylim([y_min, y_max])
+    if title:
+        plt.title(title)
+    if xlabel:
+        plt.xlabel(xlabel)
+    if ylabel:
+        plt.ylabel(ylabel)
+    plt.scatter(x, y, c='b')
+    plt.draw()
