@@ -45,5 +45,5 @@ def tow_axes_plot_temp(x, y, title=None, xlabel=None, ylabel=None):
         plt.xlabel(xlabel)
     if ylabel:
         plt.ylabel(ylabel)
-    plt.scatter(x, y, c='b')
+    plt.scatter(x, y)
     plt.draw()
