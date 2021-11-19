@@ -91,7 +91,7 @@ def computeCost(XwithBias, y, theta):
     Args:
         XwithBias (numpy.ndarray): 左に１を追加した行列
         y (numpy.ndarray): 実数値列ベクトル
-        theta (numpy.ndarray): 更新パラメータ
+        theta (numpy.ndarray): 更新するパラメータ
 
     Returns:
         numpy.float64: J
