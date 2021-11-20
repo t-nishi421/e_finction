@@ -1,3 +1,4 @@
+# メモ帳
 import numpy as np
 
 def least_squares(X, y):

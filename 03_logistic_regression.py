@@ -13,6 +13,26 @@ J = (-1/m) * Σ( y@log(h) + (1-y)@log(1-h) )
 grad = 1/m * Σ(h-y)@X
 
 """
+
+def sigmoid(X, θ):
+	z = θ[0] + θ[1]*X
+	h = 1 / (1 + np.exp(-z))
+	return h
+
+def computeCost_logi(h, y):
+	"""# ロジスティック関数の目的関数J(θ)を計算する関数
+
+	Args:
+		h (numpy.ndarray)): 仮説
+		y (numpy.ndarray): 実数値
+
+	Returns:
+		numpy.float64: J
+	"""
+	m = y.shape[0]
+	J = -(1/m) * np.sum(y*np.log(h) + (1-y)*np.log(1-h))
+	return J
+
 def hypothesis(X, theta):
     """# 仮説 h(θ) を計算する関数
 
@@ -173,3 +193,4 @@ def gradReg(theta, X, y, lmd):
     g = g + ((lmd/m) * theta)
 
     return g
+
