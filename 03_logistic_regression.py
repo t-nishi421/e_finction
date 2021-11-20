@@ -169,10 +169,10 @@ def plotDataWithDB2(X, y, theta, deg):
 
 """ L2正則化について
 以外と知らない「最小二乗法」の落とし穴～正則化項を使おうよ！～
-<https://www.youtube.com/watch?v=KNE-BUKGyDk>
+https://www.youtube.com/watch?v=KNE-BUKGyDk
 
 【数学嫌いと学ぶデータサイエンス】第6章-第2回-ridge,lasso回帰
-<https://www.youtube.com/watch?v=noNlFZD7Cbw&t=22s>
+https://www.youtube.com/watch?v=noNlFZD7Cbw&t=22s
 """
 
 #正則化された目的関数

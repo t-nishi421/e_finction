@@ -1,4 +1,4 @@
-# 線形回帰で用いる関数
+# 線形回帰
 import numpy as np
 import matplotlib.pyplot as plt
 
