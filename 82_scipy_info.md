@@ -10,6 +10,8 @@
 #行列演算にはdot()関数を用います。
 #気を付けてほしいのが、配列の形です。XwithBias.shapeは(100, 3)、initial_theta.shape(3,)です。行列演算が成立するように順番を考えましょう。
 
+import scipy.optimize as scopt
+
 scopt.minimize("{目的関数}", "{仮説}", jac="{目的関数の勾配}", args=(X,y), method='BFGS', options={'maxiter': 400, 'disp': True})
 ##############################
 ```

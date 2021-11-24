@@ -2,3 +2,30 @@
 Python/Numpyのnp.newaxisの考え方のコツ
 <https://qiita.com/rtok/items/10f803a226892a760d75>
 
+# 平均値を求めたい np.mean()
+```python
+import numpy as np
+
+ary = np.arange(12).reshape(3,4)
+ary.mean(axis=None)
+
+''' axisについて
+axis=x
+- None : ndarray全体の平均
+- 0    : 列ごとの平均
+- 1    : 行ごとの平均
+'''
+```
+
+# 標準偏差を求めたい np.std()
+```python
+import numpy as np
+
+ary = np.arange(12).reshape(3,4)
+ary.std(axis=None)
+
+''' axisについて
+なんか結構めんどくさい構造になってる。。。
+None, 0, 1は大体他と考え方は同じ
+'''
+```
