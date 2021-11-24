@@ -29,7 +29,7 @@
 - 対数とは【高校数学】指数・対数関数
 <https://www.youtube.com/watch?v=utaL_PiUI9U>
 
-### ネイピア数でlogが出てきて...ん...?ってなったら以下を見るべし
+### ネイピア数でlogが出てきて、ん...?ってなったら以下を見るべし
 - 自然対数の底e（ネイピア数）の定義・対数関数,指数関数の導関数【高校数学】
 <https://www.youtube.com/watch?v=cHn8IRpmv84>
 
