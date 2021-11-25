@@ -33,4 +33,6 @@
 - 自然対数の底e（ネイピア数）の定義・対数関数,指数関数の導関数【高校数学】
 <https://www.youtube.com/watch?v=cHn8IRpmv84>
 
-
+### ∀（全称記号）について
+- 数学記号の由来について（4）－論理記号（∀、∃、∴、∵等）－
+<https://www.nli-research.co.jp/report/detail/id=64337?site=nli>

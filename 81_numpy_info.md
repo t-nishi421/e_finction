@@ -29,3 +29,13 @@ ary.std(axis=None)
 None, 0, 1は大体他と考え方は同じ
 '''
 ```
+
+# 配列をシャッフルしたい np.random.premutation(配列)
+```python
+import numpy as np
+
+# 行ベクトル(n=100)を生成
+X = np.array([i for i in range(100)])
+
+np.random.permutation(X)
+```
