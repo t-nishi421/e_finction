@@ -39,3 +39,13 @@ X = np.array([i for i in range(100)])
 
 np.random.permutation(X)
 ```
+
+# 行列のアンロールと復元
+```python
+# flatten()を使用すると行列を行ベクトルに変換できる
+# W = np.ndarray行列(row=10, colmun=11)
+Wvec = W.flatten()
+
+# 元に戻すときはreshape({行数}, {列数}) を使用する
+W = Wvec.reshape(10, 11)
+```
