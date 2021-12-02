@@ -36,3 +36,7 @@
 ### ∀（全称記号）について
 - 数学記号の由来について（4）－論理記号（∀、∃、∴、∵等）－
 <https://www.nli-research.co.jp/report/detail/id=64337?site=nli>
+
+# E資格筆記試験の情報
+- 【ディープラーニング協会 E資格】受かるためにやるべきこと  
+<https://qiita.com/YuyaOmori/items/b3c14dd017cc9c5b1979>
