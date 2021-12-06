@@ -84,6 +84,10 @@ def softmax(x):
 ###########################
 # 例：scikit-learnでDL実装 #
 ###########################
+''' 1.17. Neural network models (supervised) - Scikit-learn
+https://scikit-learn.org/stable/modules/neural_networks_supervised.html
+'''
+
 from sklearn.neural_network import MLPClassifier
 x = np.array([[0, 0], [1, 1], [1, 0], [0, 1]])
 y = np.array([1, 1, 0, 0])
