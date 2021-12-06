@@ -81,33 +81,33 @@ def softmax(x):
   exp_x = np.exp(x)
   return exp_x / np.sum(exp_x, axis=1, keepdims=True)
 
-####################
-# scikit-learnでDL #
-####################
+###########################
+# 例：scikit-learnでDL実装 #
+###########################
 from sklearn.neural_network import MLPClassifier
 x = np.array([[0, 0], [1, 1], [1, 0], [0, 1]])
 y = np.array([1, 1, 0, 0])
 X_train, X_test = x, x  #訓練データとテストデータ
 y_train, y_test = y, y  #訓練データとテストデータの正解
-  #ニューラルネットワークのインスタンスを作成
-mlp = MLPClassifier(hidden_layer_sizes=(2), #隠れ層のユニット数
-                    activation='relu',  #隠れ層の活性化関数はReLU
-                    max_iter=10000,  #学習回数
-                    alpha=0, #L2正則化パラメータ
+  # インスタンス作成
+mlp = MLPClassifier(hidden_layer_sizes=(2), # 隠れ層のユニット数
+                    activation='relu',  # 隠れ層の活性化関数はReLU
+                    max_iter=10000,  # 学習回数
+                    alpha=0, # L2正則化パラメータ
                     solver='sgd',# 学習アルゴリズム（確率的勾配降下法）
-                    verbose=0, #学習ログの表示 ０を１に変更すると表示されます 
-                    learning_rate_init=0.01)#学習率
+                    verbose=0, # 学習ログの表示 0:非表示 1:表示 
+                    learning_rate_init=0.01)# 学習率
 
-#作成したインスタンスを使って学習
-#引数に訓練データと正解ラベルを渡す
+# 作成したインスタンスを使って学習
+# 引数に訓練データと正解ラベルを渡す
 mlp.fit(X_train, y_train)
 
-print("Training set score: %f" % mlp.score(X_train, y_train))
-print("Test set score: %f" % mlp.score(X_test, y_test))
+print("訓練スコア: %f" % mlp.score(X_train, y_train))
+print("テストスコア: %f" % mlp.score(X_test, y_test))
 
-#重みとバイアスの確認
-##重み
+# 重みとバイアスの確認
+## 重み
 mlp.coefs_[0]
-##バイアス
+## バイアス
 mlp.intercepts_[0]
 

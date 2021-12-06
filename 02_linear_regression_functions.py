@@ -79,8 +79,6 @@ def the_steepest_descent(X, y, alpha=0.01, epochs=10000, learn_plt=False):
         # 序盤の学習は視認性を考慮して省いている
         plt.plot(cost[10:])
 
-    print(f'a:{a}')
-    print(f'b:{b}')
     return np.array([a, b])
 
 def computeCost(XwithBias, y, theta):
@@ -103,7 +101,6 @@ def computeCost(XwithBias, y, theta):
 def gradientDescent(XwithBias, y, theta, alpha, iterations):
     m = y.size
     J_history = np.empty([iterations, 1])
-    #np.emptyは領域の確保だけ行う。初期化していないため中に何が入っているかは分からないので、必ず何かを代入して用いる
     
     for iter in range(iterations):
         theta = theta - (alpha/m)*(XwithBias.T@(XwithBias@theta - y))

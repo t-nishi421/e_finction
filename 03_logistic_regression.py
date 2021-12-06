@@ -43,9 +43,9 @@ def hypothesis(X, theta):
     Returns:
         numpy.ndarray: 仮説
     """
-    m = X.shape[0] #訓練例の数
-    XwithBias = np.c_[np.ones([m,1]),X] # Xの1列目にズラッと1を並べる XwithBias.shapeは(100, 3)
-    #numpyを使ってもscipyを使っても構いません。
+    m = X.shape[0]
+    XwithBias = np.c_[np.ones([m,1]),X]
+    
     h = 1 / (1 + np.exp(-XwithBias@theta))
     return h
 
@@ -81,6 +81,9 @@ def polyFeature(X0, X1, degree):
 
 def cost(theta, X, y):
     """# 目的関数Jを計算する関数
+    h:仮説
+    m:訓練例の数
+    J:目的関数
 
     Args:
         theta ([type]): [description]
@@ -90,14 +93,11 @@ def cost(theta, X, y):
     Returns:
         [type]: [description]
     """
-    h = hypothesis(X, theta) #仮説h
-    m = X.shape[0] #訓練例の数
+    h = hypothesis(X, theta)
+    m = X.shape[0]
 
-    # 目的関数J(θ)の実装
-    # 1次元のnumpy配列同士のdot積は内積を表します。
     J = (-1/m)*np.sum(y@np.log(h) + (1-y)@np.log(1-h))
 
-    # -inf * 0 は nan になる。そのときはJ全体をinfで返す。
     if np.isnan(J):
         return np.inf
     return J
@@ -110,12 +110,10 @@ def grad(theta, X, y):
         X ([type]): [description]
         y ([type]): [description]
     """
-    m = X.shape[0] #訓練例の数: 100
-    XwithBias = np.c_[np.ones([m,1]),X] # Xの1列目にズラッと1を並べる XwithBias.shapeは(100, 3)
-    h = hypothesis(X, theta) #仮説h
+    m = X.shape[0]
+    XwithBias = np.c_[np.ones([m,1]),X]
+    h = hypothesis(X, theta)
 
-    # ヒント：XwithBiasを使います。この行列の転置はXwithBias.T
-#     grad = (1/m) * np.sum(XwithBias.T@(h-y))
     grad = XwithBias.T@(h-y) / m
     return grad
 
@@ -175,8 +173,18 @@ https://www.youtube.com/watch?v=KNE-BUKGyDk
 https://www.youtube.com/watch?v=noNlFZD7Cbw&t=22s
 """
 
-#正則化された目的関数
 def costReg(theta, X, y, lmd):
+    """正則化された目的関数
+
+    Args:
+        theta ([type]): [description]
+        X ([type]): [description]
+        y ([type]): [description]
+        lmd ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
     m = y.size
     J = cost(theta, X, y)
 
@@ -184,11 +192,21 @@ def costReg(theta, X, y, lmd):
 
     return J
 
-#正則化された目的関数の勾配を計算する関数
 def gradReg(theta, X, y, lmd):
+    """正則化された目的関数の勾配を計算
+
+    Args:
+        theta ([type]): [description]
+        X ([type]): [description]
+        y ([type]): [description]
+        lmd ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
     m = y.size
     g = grad(theta, X, y)
-    theta[0] = 0 #0番目の成分は正則化項に含めないため、0にしておきます。
+    theta[0] = 0
     
     g = g + ((lmd/m) * theta)
 

@@ -55,7 +55,7 @@ def linearRegCostFunction(theta, XwithBias, y, lmd):
     Returns:
         np.float64: 目的関数出力
     """
-    m = y.size # データ数m
+    m = y.size
     J = (1/(2*m)) * np.sum((XwithBias@theta - y)**2) + (lmd/(2*m)) * np.sum(theta[1:]**2)
     return J
 
@@ -71,7 +71,7 @@ def linearRegGrad(theta, XwithBias, y, lmd):
     Returns:
         np.ndarray: 勾配
     """
-    m = y.size # データ数
+    m = y.size
     grad = XwithBias.T@(XwithBias@theta - y) / m + (lmd/m) * np.r_[0, theta[1:]]
     return grad
 
@@ -89,17 +89,12 @@ def trainLinearReg(XwithBias, y, lmd):
     Returns:
         anp.ndarray: 最適化されたパラメータ
     """
-    _, n = XwithBias.shape # Xはここではバイアス項を付け加えているので2-dim
+    _, n = XwithBias.shape
 
-    # thetaの初期化
-    #initial_thetaは1-dim
     initial_theta = np.zeros(n)
 
-    # 最適化する変数以外は固定
-    # theta以外固定したcost function
-    cost_fixed = partial(linearRegCostFunction, XwithBias=XwithBias, y=y, lmd=lmd) #functools
-    # theta以外固定したgraf function
-    grad_fixed = partial(linearRegGrad, XwithBias=XwithBias, y=y, lmd=lmd) #functools
+    cost_fixed = partial(linearRegCostFunction, XwithBias=XwithBias, y=y, lmd=lmd)
+    grad_fixed = partial(linearRegGrad, XwithBias=XwithBias, y=y, lmd=lmd)
 
     # 最適化
     res = scopt.minimize(cost_fixed, initial_theta, jac=grad_fixed, method='BFGS')
@@ -122,10 +117,9 @@ def learningCurve(XwithBias, y, XcvWithBias, ycv, lmd):
         np.ndarray: 学習誤差 error_traion
         np.ndarray: 交差検証誤差 error_cv
     """
-    m, _ = XwithBias.shape # 2-dim
+    m, _ = XwithBias.shape
     m_cv, _ = XcvWithBias.shape
 
-    # np.empty(配列要素数)は、初期化をせずに新しい配列を生成する際に使用します。np.onesなどに比べ、初期化の処理がないため高速です。
     error_train = np.empty(m)
     error_cv = np.empty(m)
 

@@ -182,17 +182,7 @@ def computeClusterMeans(X, idx):
     """
     K = idx.max()+1
     clusterMeans = np.array([X[idx==i,:].mean(axis=0) for i in range(K)])
-    return clusterMeans[~np.isnan(clusterMeans).any(axis=1)] #nanを含む行は除外して返す
-
-''' k-means法の学習
-centroids = InitCentroids(X, 3)
-idx = findClosestCentroids(X, centroids)
-plotProgress(X,centroids,idx)
-for i in range(1,6):
-    centroids = computeClusterMeans(X, idx)
-    idx = findClosestCentroids(X, centroids)
-    plotProgress(X,centroids,idx)
-'''
+    return clusterMeans[~np.isnan(clusterMeans).any(axis=1)]
 
 def runKmeans(X, K_init, epsilon, max_iter):
     """ k-means法を繰り返す関数
@@ -225,38 +215,9 @@ def runKmeans(X, K_init, epsilon, max_iter):
 import sklearn.cluster as skc
 
 # インスタンス生成
-estimator = skc.KMeans(n_clusters=3, n_jobs=-1) #n_jobs=-1でCPUの全コア利用。デフォルトでは1コア利用。
+estimator = skc.KMeans(n_clusters=3, n_jobs=-1)
 # 学習(k-means法)
 estimator.fit(X)
-# 学習結果をプロットしてみる
-idx = estimator.predict(X)
-centroids = estimator.cluster_centers_
-plotProgress(X,centroids,idx)
-
-#########################
-## 画像の色素数を落とす ##
-#########################
-A = scm.imread("{画像のパス}").astype(np.float32)/255
-#intで0から255で表現するのではなく、float64で0から1で表現することで、k平均法フィッティング時の型関係のトラブルを回避。
-#しかしメモリ節約にはならない。気になる人はもっとよい方法を考えよう。
-
-plt.axis("off")
-plt.imshow(A)
-img_size = A.shape
-print(img_size)
-Aflatten = A.reshape(img_size[0]*img_size[1], 3) # 2次元データに変換
-
-# クラスタリング
-K = 5 # 色素数
-estimator_pic = skc.KMeans(n_clusters=K, n_jobs=-1)
-estimator_pic.fit(Aflatten)
-color_idx = estimator_pic.predict(Aflatten)
-color_centroids = estimator_pic.cluster_centers_
-# 復元
-Aflatten_recovered = np.array([color_centroids[i] for i in color_idx])
-A_recovered = Aflatten_recovered.reshape(img_size)
-plt.axis("off")
-plt.imshow(A_recovered)
 
 ###########
 # PCA実装 #
