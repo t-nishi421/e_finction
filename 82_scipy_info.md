@@ -19,3 +19,17 @@ scopt.minimize("{目的関数}", "{仮説}", jac="{目的関数の勾配}", args
 # scipy.optimize.minimizeの解説
 科学技術計算モジュール SciPy 解説 (1) 最適化
 <https://www.youtube.com/watch?v=QafNNoYjRSU>
+
+
+```python
+'''
+# 正規分布に従って初期化
+# np.random.normal()
+# https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.random.normal.html
+
+Args:
+    loc   : 平均
+    scale : 標準偏差
+    size  : 出力配列サイズ
+'''
+```

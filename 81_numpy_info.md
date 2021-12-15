@@ -49,3 +49,12 @@ Wvec = W.flatten()
 # 元に戻すときはreshape({行数}, {列数}) を使用する
 W = Wvec.reshape(10, 11)
 ```
+
+# ゼロパディング
+```python
+# numpy.padの使い方が分からなかったのでメモ
+# https://qiita.com/horitaku1124/items/6ae979b21ddc7256b872
+
+# np.pad(行列, 前後の文字埋め, 埋め込み方式)
+```
+
