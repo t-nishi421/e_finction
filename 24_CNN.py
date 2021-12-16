@@ -28,3 +28,10 @@ https://www.youtube.com/watch?v=vU-JfZNBdYU
 https://www.youtube.com/watch?v=MLixg9K6oeU
 '''
 
+''' tensorflowでCNN
+全然わからん
+'''
+
+''' kerasでCNN
+全然わからん
+'''
