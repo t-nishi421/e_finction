@@ -54,9 +54,15 @@ https://www.youtube.com/watch?v=DWectS03wg8
     手書き文字認識、音声認識、生物情報学等に応用されている。
 - Encoder-Decoder
 - Attention Model
-
+- ESN(Echo State Network)
 '''
 
+''' 長期依存性の処理
+- ゲート付きRNN
+ - LSTM（Long short-term memory）
+ - GRU（Gated recurrent unit）
+'''
 
-
-
+''' 別教材で学習した方が良いやつリスト
+LSTM
+'''
