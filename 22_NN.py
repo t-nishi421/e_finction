@@ -104,3 +104,17 @@ def mini_batch(X, epochs, sample_size, batch_size):
         for j in range(0, sample_size, batch_size):
             X_batch = X[j:j + batch_size]
             print(X_batch)
+
+''' NNのモデル
+1.重み、バイアスを初期化する
+2.エポック数分繰り返し
+    2-1.ミニバッチ分繰り返し
+        2-1-1.ミニバッチ処理
+        2-1-2.順伝播
+        2-1-3.逆伝播
+        2-1-4.パラメータ更新
+    2-2.訓練データのコスト計算
+    2-3.テストデータのコスト計算
+    2-4.精度計算
+3.結果を出力
+'''

@@ -60,9 +60,8 @@ https://www.youtube.com/watch?v=DWectS03wg8
 ''' 長期依存性の処理
 - ゲート付きRNN
  - LSTM（Long short-term memory）
+    https://www.youtube.com/watch?v=oxygME2UBFc&list=PLhDAH9aTfnxKXf__soUoAEOrbLAOnVHCP&index=11
  - GRU（Gated recurrent unit）
-'''
-
-''' 別教材で学習した方が良いやつリスト
-LSTM
+    要約：「前回の情報をどれだけ忘れるか」を制御して長期記憶を持たせる。
+    https://www.youtube.com/watch?v=K8ktkhAEuLM&list=PLhDAH9aTfnxKXf__soUoAEOrbLAOnVHCP&index=10
 '''
