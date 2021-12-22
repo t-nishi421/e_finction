@@ -58,3 +58,55 @@ W = Wvec.reshape(10, 11)
 # np.pad(行列, 前後の文字埋め, 埋め込み方式)
 ```
 
+# アインシュタイン縮約記法(einsum)
+この記法を使うと計算時間の短縮になるとかならないとか
+- docs  
+ https://numpy.org/doc/stable/reference/generated/numpy.einsum.html  
+- Qiita  
+ https://qiita.com/d-takagishi/items/94e47ecd1abc54978b44  
+
+# 累乗計算 np.power()
+```python
+# 2の3乗
+np.power(2,3)
+> 8
+```
+
+# 平方根 np.sqet()
+```python
+# √2（実数）
+np.sqrt(2)
+> 1.4142135623730951
+```
+
+# 複数のndarray配列を既存の軸に沿って結合する np.concatenate()
+- 参考記事  
+ https://note.nkmk.me/python-numpy-concatenate-stack-block/  
+```python
+# 2*3の行列を二つ作成
+zeros = np.zeros([2,3])
+print(f"zeros:\n{zeros}")
+ones = np.ones([2,3])
+print(f"ones:\n{ones}")
+> zeros:
+> [[0. 0. 0.]
+>  [0. 0. 0.]]
+> ones:
+> [[1. 1. 1.]
+>  [1. 1. 1.]]
+
+# デフォルトの場合、行結合
+np.concatenate([zeros, ones])
+> array([[0., 0., 0.],
+>        [0., 0., 0.],
+>        [1., 1., 1.],
+>        [1., 1., 1.]])
+
+# axis=1を付けると、列結合
+np.concatenate([zeros, ones], axis=1)
+> array([[0., 0., 0., 1., 1., 1.],
+>        [0., 0., 0., 1., 1., 1.]])
+```
+
+
+
