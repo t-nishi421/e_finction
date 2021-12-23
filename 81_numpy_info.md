@@ -108,5 +108,12 @@ np.concatenate([zeros, ones], axis=1)
 >        [0., 0., 0., 1., 1., 1.]])
 ```
 
-
+# 配列の最大要素のインデックスが欲しい np.argmax()
+```python
+a = np.arange(5)
+a
+> [0,1,2,3,4]
+np.argmax(a)
+> 4
+```
 
