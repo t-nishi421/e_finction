@@ -117,3 +117,6 @@ np.argmax(a)
 > 4
 ```
 
+# 乱数を生成したい
+Numpyの様々な乱数生成方法[正規分布、配列内から、二項分布に従って]  
+https://qiita.com/appgrape/items/0641e31d09ef13b54e65  
