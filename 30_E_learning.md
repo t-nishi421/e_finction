@@ -69,13 +69,36 @@ I(x) = -logP(x)
 ### シャノンエントロピー誤差
 H(x) = -Σi P(xi)log(P(xi))
 
-### 
+# 機械学習
+### ロジスティック回帰
+ロジスティック回帰の目的関数  
+https://tokkan.net/ml/costfunction.html  
 
+### SVM
+- cost関数はヒンジ関数
+- 目的関数のCを大きくすると外れ値の影響を小さくできる（低バイアス、高バリアンスになる）
+- 線形分離不可能なケースはカーネル法を用いる(3軸グラフで閾値分類をするイメージ)
 
+### PReLU (変数付きReLU)
+https://atmarkit.itmedia.co.jp/ait/articles/2005/20/news010.html
 
+### Adam
+Deep Learning精度向上テクニック：様々な最適化手法 #1  
+https://www.youtube.com/watch?v=q933reMpvX8  
 
+# CNN
+### フーリエ変換
+https://www.yukisako.xyz/entry/fourier-transform
 
+### R-CNN, Fast R-CNN, Faster R-CNN
+シンプルなCNNだと無駄が多かったので検出領域を特定して効率化  
+https://jp.mathworks.com/videos/object-detection-and-recognition-using-faster-r-cnn-1494263953252.html  
+物体検出についての歴史まとめ(1)  
+https://qiita.com/mshinoda88/items/9770ee671ea27f2c81a9  
 
+### SegNet
+SegNet: 画像セグメンテーションニューラルネットワーク  
+https://qiita.com/cyberailab/items/d11862852eccc17585e8  
 
 
 
