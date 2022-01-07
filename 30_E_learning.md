@@ -100,11 +100,42 @@ https://qiita.com/mshinoda88/items/9770ee671ea27f2c81a9
 SegNet: 画像セグメンテーションニューラルネットワーク  
 https://qiita.com/cyberailab/items/d11862852eccc17585e8  
 
+# RNN
 
+# 生成モデル
 
+# 強化学習
 
+# プレミニ
+## 勾配降下法最適化手法
+### AdaGrad
+過去の勾配の2乗和を蓄積していき、その平方根で学習率を割ることで学習率を調整する手法。  
+問題点：学習を繰り返すうちに学習率が小さくなりすぎてしまう。
+### RMSprop
+移動指数平均を使うことによって過去の古い勾配の情報は無視して、直近の勾配の情報だけ見ることが出来るようになり、AdaGradの問題は解決した。
+### Adadelta
+パラメータの更新に使う値の次元が合わない問題を解消した。
+### Adam
+人気があるoptimizerでモメンタムとAdagradを組み合わせたような手法。
+### Eve
+Adamを改良した手法。  
+### ニュートン法
+2次のテイラー級数展開を用いる手法。
 
+# プレミニ2
+## DenseNet, DenseBlock
+DenseNetの論文を読んで自分で実装してみる  
+https://qiita.com/koshian2/items/01bd9f08444799625607  
 
+## Batch Normalization, Layer Normalization
+Layer Normalizationを理解する  
+https://data-analytics.fun/2020/07/16/understanding-layer-normalization/  
+
+### Instance Normalization
+Batch Normalizationとその派生の整理  
+https://gangango.com/2019/06/16/post-573/  
+
+# E資格出題内容の参考
 
 
 
