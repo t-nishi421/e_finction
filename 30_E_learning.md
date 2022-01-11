@@ -135,6 +135,35 @@ https://data-analytics.fun/2020/07/16/understanding-layer-normalization/
 Batch Normalizationとその派生の整理  
 https://gangango.com/2019/06/16/post-573/  
 
+### MobileNet
+画像認識タスクにおける計算効率の高いネットワーク  
+スマホなどの小型端末でも使用できる。 
+【MobileNet(v1,v2,v3)を簡単に解説してみた】
+https://qiita.com/omiita/items/77dadd5a7b16a104df83   
+  
+Depthwise Separable ConvolutionではDepthwise ConvolutionとPointwise Convolutionそれぞれで演算を行う。  
+
+### pix2pix
+【Pix2Pix：CGANによる画像変換】  
+https://blog.negativemind.com/2019/12/29/pix2pix-image-to-image-translation-with-conditional-adversarial-networks/ 
+  
+### U-net
+共通の特徴量をレイヤー間スキップにより共有できる。  
+
+### DenseNet, ResNet
+代表的モデル「ResNet」、「DenseNet」を詳細解説！  
+https://deepsquare.jp/2020/04/resnet-densenet/  
+
+### ConditionalGAN(条件付きGAN)
+画像生成時にパラメータを付与して生成する画像を指定できる。いわゆるone-hotベクトル付与型のGAN  
+
+### プルーニング
+精度を出来るだけ抑えながら過剰な重みを減らしていくプロセス。  
+https://japan.xilinx.com/html_docs/vitis_ai/1_2/pruning.html  
+
+### WaveNet
+https://qiita.com/MasaEguchi/items/cd5f7e9735a120f27e2a  
+
 # E資格出題内容の参考
 
 
