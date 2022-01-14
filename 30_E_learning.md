@@ -164,9 +164,12 @@ https://japan.xilinx.com/html_docs/vitis_ai/1_2/pruning.html
 ### WaveNet
 https://qiita.com/MasaEguchi/items/cd5f7e9735a120f27e2a  
 
+
 # E資格出題内容の参考
 
-
+# お勧めAIチャンネル
+AI教室 AIRS-Lab  
+https://www.youtube.com/channel/UCT_HwlT8bgYrpKrEvw0jH7Q  
 
 
 
